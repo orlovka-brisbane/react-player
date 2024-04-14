@@ -1,6 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
-import Card from "./Card";
-import "./App.css";
+import React from "react";
 
 const App = () => {
   const player = useRef();
@@ -39,11 +37,9 @@ const App = () => {
 
       <div className="controls">
         <button onClick={handlePlay}>Play</button>
-
         {/* TODO: Slider */}
         <div>Current time: {currentTime}</div>
-        <div>Duration: {duration}</div>
-
+        <div>Duration: {duration}</div>V =MN
         <button onClick={handlePause}>Pause</button>
       </div>
       <audio ref={player} src="/track.mp3" />
