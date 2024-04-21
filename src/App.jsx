@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { PlayIcon, PauseIcon } from "@heroicons/react/24/solid";
+
+import Card from "./Card";
+import Slider from "./Slider";
+
+import "./App.css";
 
 const App = () => {
   const player = useRef();
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   function handlePlay() {
+    setIsPlaying(true);
     player.current.play();
   }
 
   function handlePause() {
+    setIsPlaying(false);
     player.current.pause();
+  }
+
+  function togglePlay() {
+    if (isPlaying) {
+      handlePause();
+    } else {
+      handlePlay();
+    }
   }
 
   function handleTimeUpdate() {
@@ -36,11 +53,13 @@ const App = () => {
       <h3 className="subTitle">Audio player with custom controls</h3>
 
       <div className="controls">
-        <button onClick={handlePlay}>Play</button>
-        {/* TODO: Slider */}
-        <div>Current time: {currentTime}</div>
-        <div>Duration: {duration}</div>V =MN
-        <button onClick={handlePause}>Pause</button>
+        <button className={isPlaying ? "playing" : ""} onClick={togglePlay}>
+          {isPlaying ? <PauseIcon /> : <PlayIcon />}
+        </button>
+        <Slider current={currentTime} max={duration} />
+        {/* <button onClick={handlePause}>
+          <PauseIcon />
+        </button> */}
       </div>
       <audio ref={player} src="/track.mp3" />
     </Card>

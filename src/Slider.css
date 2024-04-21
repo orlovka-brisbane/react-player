@@ -1,0 +1,24 @@
+.track {
+  position: relative;
+  height: 8px;
+  width: 250px;
+  border-radius: 15px;
+  background-color: #e0e0e0;
+  margin-left: 9px;
+}
+
+.progress {
+  background-color: #000;
+  height: 8px;
+  border-radius: 15px;
+}
+
+.knob {
+  position: absolute;
+  top: calc(50% - 9px);
+  border: 2px solid #000;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background-color: #fff;
+}
