@@ -1,11 +1,16 @@
 import React from "react";
 import "./Slider.css";
 
-function Slider({ current, max }) {
+function Slider({ current, max, onClick }) {
   const currentProgressInPercentage = (current / max) * 100;
 
   function handleClick(event) {
-    console.log(event);
+    const offsetX = event.nativeEvent.offsetX;
+    const width = event.target.clientWidth;
+
+    const currentTime = (max * offsetX) / width;
+
+    onClick(Math.max(0, currentTime));
   }
 
   return (

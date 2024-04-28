@@ -1,0 +1,17 @@
+li {
+  cursor: pointer;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 4px 6px;
+}
+
+li.selected {
+  font-weight: bold;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

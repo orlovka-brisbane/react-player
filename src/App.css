@@ -1,42 +1,5 @@
-.title {
-  margin: 0;
-  padding: 0;
-  font-weight: 600;
-}
-
-.subTitle {
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 400;
-  color: #545454;
-}
-
-.controls {
+.container {
   display: flex;
-  gap: 10px;
-  margin-top: 40px;
-  align-items: center;
-}
-
-.controls button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  padding: 4px;
-  margin: 0;
-  background-color: transparent;
-  cursor: pointer;
-
-  border: 1px solid #e0e0e0;
-}
-
-.controls button svg {
-  width: 18px;
-  fill: orchid;
-}
-
-.controls button.playing {
-  background-color: #e0e0e0;
+  flex-direction: column;
+  gap: 25px;
 }
